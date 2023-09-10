@@ -61,15 +61,27 @@
       "Friday",
       "Saturday",
     ];
-    const currentDayOfTheWeek = new Date().getUTCDay();
-    currentDayOfTheWeekElem.textContent = daysOfTheWeek[currentDayOfTheWeek];
 
-    setCurrentUTCTime(currentUTCTimeElem);
+    let currentDayOfTheWeekInterval = null;
+
+    function setCurrentDayOfTheWeek(elem) {
+      const currentDayOfTheWeek = new Date().getUTCDay();
+      elem.textContent = daysOfTheWeek[currentDayOfTheWeek];
+
+      if (!currentDayOfTheWeekInterval) {
+        currentDayOfTheWeekInterval = setsetInterval(() => {
+          setCurrentDayOfTheWeek();
+        }, 6000);
+      }
+    }
 
     function setCurrentUTCTime(elem) {
       setInterval(() => {
         elem.textContent = Date.now();
       }, 100);
     }
+
+    setCurrentUTCTime(currentUTCTimeElem);
+    setCurrentDayOfTheWeek(currentDayOfTheWeekElem);
   </script>
 </html>

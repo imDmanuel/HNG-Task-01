@@ -1,0 +1,88 @@
+/* CSS RESET */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* vertical-align: middle; */
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* END CSS RESET */
+body {
+  display: grid;
+  place-content: center;
+}
+
+.profile-card {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 40px 20px;
+}
+
+.profile-card div {
+  display: flex;
+  margin-top: 5px;
+  gap: 12px;
+}
+
+[data-testid] {
+  color: rgb(62, 46, 141);
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 100%;
+  outline: 2px solid tomato;
+  outline-offset: 10px;
+  margin: 10px auto;
+  margin-bottom: 30px;
+}

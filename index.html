@@ -4,27 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HNG Task 01</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <img
-      src="./profile-pic.jpeg"
-      alt="Slack profile image"
-      data-testid="slackDisplayImage"
-    />
+    <div class="profile-card">
+      <img
+        src="./profile-pic.jpeg"
+        alt="EMMANUEL CHIWUZO"
+        data-testid="slackDisplayImage"
+      />
 
-    <div>Slack Username</div>
-    <div data-testid="slackUserName">EMMANUEL CHIWUZO</div>
+      <div>
+        <div>Slack Username:</div>
+        <div data-testid="slackUserName">EMMANUEL CHIWUZO</div>
+      </div>
 
-    <div>Current day of the week</div>
-    <div data-testid="currentDayOfTheWeek"></div>
+      <div>
+        <div>Current day of the week:</div>
+        <div data-testid="currentDayOfTheWeek"></div>
+      </div>
 
-    <div>Current UTC Time:</div>
-    <div data-testid="currentUTCTime"></div>
+      <div>
+        <div>Current UTC Time:</div>
+        <div data-testid="currentUTCTime"></div>
+      </div>
 
-    <div>Track</div>
-    <div data-testid="myTrack">Frontend</div>
+      <div>
+        <div>Track:</div>
+        <div data-testid="myTrack">Frontend</div>
+      </div>
 
-    <div>Github URL</div>
-    <div data-testid="githubURL"></div>
+      <div>
+        <div>Github URL:</div>
+        <a
+          href="https://github.com/imDmanuel/HNG-Task-01"
+          data-testid="githubURL"
+          >Task github URL</a
+        >
+      </div>
+    </div>
   </body>
+
+  <script>
+    const currentDayOfTheWeekElem = document.querySelector(
+      '[data-testid="currentDayOfTheWeek"]'
+    );
+    const currentUTCTimeElem = document.querySelector(
+      '[data-testid="currentUTCTime"]'
+    );
+    const daysOfTheWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const currentDayOfTheWeek = new Date().getUTCDay();
+    currentDayOfTheWeekElem.textContent = daysOfTheWeek[currentDayOfTheWeek];
+
+    setCurrentUTCTime(currentUTCTimeElem);
+
+    function setCurrentUTCTime(elem) {
+      setInterval(() => {
+        elem.textContent = Date.now();
+      }, 100);
+    }
+  </script>
 </html>
